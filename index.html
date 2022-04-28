@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .table{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .one{
+      width: 40vw;
+      height: 40vw;
+      border: 1px solid black;
+      display: flex;      
+      justify-content: center;
+      align-items: center;
+    }
+    .one>div:nth-child(1){
+      width: 25vw;
+      height: 25vw;
+      background-color: skyblue;
+      position:absolute;
+      top:150px;
+      left:620px;
+    }
+    .one>div:nth-child(2){
+      width: 25vw;
+      height: 25vw;
+      background-color: greenyellow;
+      position:relative;
+      top:100px;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="table">
+    <div class="one">
+      <div>A</div>
+      <div>B</div>
+    </div>
+  </div>
+  <script>
+    const table = document.getElementsByClassName("table");
+    //console.log(table);
+    //console.dir(table);
+    const one = document .getElementsByClassName("one");
+    //console.log(one);
+    //console.dir(one);
+    const onechd = one[0].children[0];
+    const onechdd = one[0].children[1];
+   // console.log(onechd);
+   // console.log(onechdd);
+     console.dir(onechd);
+    table[0].style.width = "100vw";
+    table[0].style.height = "100vh";
+    table[0].style.display = "flex";
+    table[0].style.justifyContent = "center";
+    table[0].style.alignItems = "center";
+
+    one[0].style.width = "40vw";
+    one[0].style.height = "40vw";
+    one[0].style.display = "flex";
+    one[0].style.justifyContent = "center";
+    one[0].style.alignItems = "center";
+    one[0].style.border = "1px solid black";
+
+    onechd.style.width = "25vw";
+    onechd.style.height = "25vw";
+    onechd.style.backgroundColor = "skyblue";
+    onechd.style.position = "absolute";
+    onechd.style.left = "620px";
+    onechd.style.top = "150px";
+
+    onechdd.style.width = "25vw";
+    onechdd.style.height = "25vw";
+    onechdd.style.backgroundColor = "greenyallow";
+    onechdd.style.position = "relative";
+    onechdd.style.left = "100px";
+    onechdd.style.top = "100px";
+
+    let Velue = 2
+    let Belue = 3
+    console.log(Velue)
+
+    onechd.addEventListener("click",function(){
+      Velue++;
+      onechd.style.zIndex = Velue;
+     console.log(onechd);
+      
+    });
+
+    onechdd.addEventListener("click",function(){
+      Belue++
+      onechdd.style.zIndex = Belue;
+     console.log(onechdd);
+      
+    });
+    //한번씩클릭하면 바뀌는데 연속해서 바뀌는건 잘안되는거같습니다
+  </script>
+</body>
+</html>
